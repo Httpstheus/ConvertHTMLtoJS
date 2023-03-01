@@ -1,50 +1,43 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Convert HTML To Image</title>
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
-    </script>
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js">
-    </script>
-  </head>
-  <style media="screen">
-    #htmlContent{
-      background: lightblue;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 300px;
-      height: 200px;
-    }
-  </style>
-  <body onload = "autoClick();">
 
-    <div id = "htmlContent">
-      <h1>Hello World!</h1>
-    </div>
-    <a id="download">Download</a>
+    <body>
 
-    <script type="text/javascript">
-      function autoClick(){
-        $("#download").click();
-      }
+        <div class="select-name">
+          
+            <div class="itens">
+                <input type="text" name="" id="nameColaborator" placeholder="Nome">
 
-      $(document).ready(function(){
-        var element = $("#htmlContent");
+                <select name="" id="tipo">
 
-        $("#download").on('click', function(){
+                    <option value="Bookplay">Bookplay</option>
+                    <option value="mundialEditora">Mundial Editora</option>
 
-          html2canvas(element, {
-            onrendered: function(canvas) {
-              var imageData = canvas.toDataURL("image/jpg");
-              var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
-              $("#download").attr("download", "image.jpg").attr("href", newData);
-            }
-          });
 
-        });
-      });
-    </script>
-  </body>
-</html>
+                </select>
+
+                <button id="Confirm" onclick="Validate()">Gerar</button>
+                <button id="dl-png">Download</button>
+          </div>
+
+        </div>
+
+
+        <div id="htmlContent">
+
+                <div id="img-header">
+                    <img src="https://mund.digital/mkt/CartoesAniversario/Bookplay_Anivers%c3%a1rio_Cima.png" width="800px"  alt="banner">
+                </div>
+
+                <div class="name-welcome">
+                    <h1 id="innerName">@nome</h1>
+                </div>
+
+                <div id="btn">
+                    <img src="https://mund.digital/mkt/CartoesAniversario/Bookplay_Anivers%c3%a1rio_Baixo.png" width="800px">
+                </div>
+
+        </div>  <!--Div htmlContent-->
+        
+      
+
+    </body>
+    </html>
